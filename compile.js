@@ -1,1 +1,5 @@
-// compile code will go here
+const path = require('path');
+const fs = require('fs');
+
+const inboxPath = path.resolve(__dirname, 'contracts', 'Inbox.sol');
+const source = fs.readFileSync(inboxPath, 'utf8');
