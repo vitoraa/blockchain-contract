@@ -35,4 +35,12 @@ describe('Inbox', () => {
         const message = await inbox.methods.message().call();
         assert.equal(message, 'Hi there!');
     });
+
+    it('changes the message', async () => {
+        await inbox.methods.setMessage('new message').send({
+            from: accounts[0]
+        });
+        const message = await inbox.methods.message().call();
+        assert.equal(message, 'new message');
+    });
 });
